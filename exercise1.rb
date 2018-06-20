@@ -24,9 +24,7 @@ def metodo3(color)
 	lines.each	do |value|
 	    content += value.gsub("<p>", "<p style='background-color: #{color}'>")
 	end
-
 	file2 = File.open("index.html", 'w')
-
 	file2.puts content
 	file.close
 	file2.close
