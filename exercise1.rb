@@ -1,4 +1,4 @@
-def metodo1 (str1, str2)
+def create_index(str1, str2)
 	file = File.open("index.html", 'w')
 	file.puts "<p> #{str1} </p>" 
 	file.puts "<p> #{str2} </p>"
@@ -7,7 +7,7 @@ def metodo1 (str1, str2)
 end
 
 #Trabajare en el mismo archivo, por lo que no sera necesario usar los strings en este metodo
-def metodo2 (array1)
+def add_list(array1)
 	file = File.open("index.html", 'a') do |file|
 		file.puts "<ol>"
 		array1.each { |ele| file.puts "<li> #{ele} </li>"} if array1.any?
@@ -17,7 +17,7 @@ def metodo2 (array1)
 	nil
 end
 
-def metodo3(color)
+def add_background_color(color)
 	file = File.open("index.html", 'r')
 	lines = file.readlines
 	content = ''
@@ -34,6 +34,6 @@ end
 array = ['elemento 1', 'elemento 2', 'elemento 3']
 color = '#b0ccab'
 
-metodo1('string1','string2')
-metodo2(array)
-metodo3(color)
+create_index('string1','string2')
+add_list(array)
+add_background_color(color)
